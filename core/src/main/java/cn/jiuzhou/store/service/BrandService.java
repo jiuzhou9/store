@@ -1,8 +1,11 @@
-package cn.jiuzhou.store.dao;
+package cn.jiuzhou.store.service;
 
 import cn.jiuzhou.store.model.Brand;
 
-public interface BrandMapper {
+/**
+ * Created by jiuzhou on 2017/7/8.
+ */
+public interface BrandService {
     int deleteByPrimaryKey(Integer brandId);
 
     int insert(Brand record);
