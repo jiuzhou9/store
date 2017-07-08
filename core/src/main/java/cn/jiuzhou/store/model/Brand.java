@@ -1,7 +1,7 @@
 package cn.jiuzhou.store.model;
 
 public class Brand {
-    private Long brandId;
+    private Integer brandId;
 
     private String brandName;
 
@@ -13,7 +13,7 @@ public class Brand {
 
     private Integer brandSort;
 
-    public Brand(Long brandId, String brandName, String brandDesc, String imgs, String website, Integer brandSort) {
+    public Brand(Integer brandId, String brandName, String brandDesc, String imgs, String website, Integer brandSort) {
         this.brandId = brandId;
         this.brandName = brandName;
         this.brandDesc = brandDesc;
@@ -26,11 +26,11 @@ public class Brand {
         super();
     }
 
-    public Long getBrandId() {
+    public Integer getBrandId() {
         return brandId;
     }
 
-    public void setBrandId(Long brandId) {
+    public void setBrandId(Integer brandId) {
         this.brandId = brandId;
     }
 
