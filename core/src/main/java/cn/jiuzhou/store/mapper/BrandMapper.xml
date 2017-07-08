@@ -3,33 +3,33 @@
 <mapper namespace="cn.jiuzhou.store.dao.BrandMapper" >
   <resultMap id="BaseResultMap" type="cn.jiuzhou.store.model.Brand" >
     <constructor >
-      <idArg column="BRAND_ID" jdbcType="DECIMAL" javaType="java.lang.Long" />
+      <idArg column="BRAND_ID" jdbcType="INTEGER" javaType="java.lang.Integer" />
       <arg column="BRAND_NAME" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="BRAND_DESC" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="IMGS" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="WEBSITE" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="BRAND_SORT" jdbcType="DECIMAL" javaType="java.lang.Integer" />
+      <arg column="BRAND_SORT" jdbcType="INTEGER" javaType="java.lang.Integer" />
     </constructor>
   </resultMap>
   <sql id="Base_Column_List" >
     BRAND_ID, BRAND_NAME, BRAND_DESC, IMGS, WEBSITE, BRAND_SORT
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
     from EB_BRAND
-    where BRAND_ID = #{brandId,jdbcType=DECIMAL}
+    where BRAND_ID = #{brandId,jdbcType=INTEGER}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from EB_BRAND
-    where BRAND_ID = #{brandId,jdbcType=DECIMAL}
+    where BRAND_ID = #{brandId,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="cn.jiuzhou.store.model.Brand" >
     insert into EB_BRAND (BRAND_ID, BRAND_NAME, BRAND_DESC, 
       IMGS, WEBSITE, BRAND_SORT
       )
-    values (#{brandId,jdbcType=DECIMAL}, #{brandName,jdbcType=VARCHAR}, #{brandDesc,jdbcType=VARCHAR}, 
-      #{imgs,jdbcType=VARCHAR}, #{website,jdbcType=VARCHAR}, #{brandSort,jdbcType=DECIMAL}
+    values (#{brandId,jdbcType=INTEGER}, #{brandName,jdbcType=VARCHAR}, #{brandDesc,jdbcType=VARCHAR}, 
+      #{imgs,jdbcType=VARCHAR}, #{website,jdbcType=VARCHAR}, #{brandSort,jdbcType=INTEGER}
       )
   </insert>
   <insert id="insertSelective" parameterType="cn.jiuzhou.store.model.Brand" >
@@ -56,7 +56,7 @@
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="brandId != null" >
-        #{brandId,jdbcType=DECIMAL},
+        #{brandId,jdbcType=INTEGER},
       </if>
       <if test="brandName != null" >
         #{brandName,jdbcType=VARCHAR},
@@ -71,7 +71,7 @@
         #{website,jdbcType=VARCHAR},
       </if>
       <if test="brandSort != null" >
-        #{brandSort,jdbcType=DECIMAL},
+        #{brandSort,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
@@ -91,10 +91,10 @@
         WEBSITE = #{website,jdbcType=VARCHAR},
       </if>
       <if test="brandSort != null" >
-        BRAND_SORT = #{brandSort,jdbcType=DECIMAL},
+        BRAND_SORT = #{brandSort,jdbcType=INTEGER},
       </if>
     </set>
-    where BRAND_ID = #{brandId,jdbcType=DECIMAL}
+    where BRAND_ID = #{brandId,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="cn.jiuzhou.store.model.Brand" >
     update EB_BRAND
@@ -102,7 +102,7 @@
       BRAND_DESC = #{brandDesc,jdbcType=VARCHAR},
       IMGS = #{imgs,jdbcType=VARCHAR},
       WEBSITE = #{website,jdbcType=VARCHAR},
-      BRAND_SORT = #{brandSort,jdbcType=DECIMAL}
-    where BRAND_ID = #{brandId,jdbcType=DECIMAL}
+      BRAND_SORT = #{brandSort,jdbcType=INTEGER}
+    where BRAND_ID = #{brandId,jdbcType=INTEGER}
   </update>
 </mapper>
