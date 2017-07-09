@@ -3,6 +3,7 @@ package cn.jiuzhou.store.servicetest;
 import cn.jiuzhou.store.SpringTestCase;
 import cn.jiuzhou.store.model.Brand;
 import cn.jiuzhou.store.service.BrandService;
+import com.alibaba.fastjson.JSON;
 import org.apache.log4j.Logger;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,5 +28,11 @@ public class BrandServiceTest extends SpringTestCase {
         brand.setImgs("www.baidu.com");
         brand.setWebsite("www.baidu.com");
         int insert = brandService.insert(brand);
+    }
+
+    @Test
+    public void selectByPrimaryKeyTest(){
+        Brand brand = brandService.selectByPrimaryKey(1);
+        System.out.println(JSON.toJSONString(brand));
     }
 }
