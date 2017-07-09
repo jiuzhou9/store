@@ -2,6 +2,6 @@
 <html>
 <body>
 <h2>Hello World!</h2>
-<a href="../shop/item/index.jsp">shop/item/index.jsp</a>
+<a href="${pageContext.request.contextPath}/item/toIndex.do">shop/item/index.jsp</a>
 </body>
 </html>
