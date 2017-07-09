@@ -6,6 +6,8 @@ import cn.jiuzhou.store.service.BrandService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * Created by jiuzhou on 2017/7/8.
  */
@@ -25,6 +27,11 @@ public class BrandServiceImpl implements BrandService{
     public Brand selectByPrimaryKey(Integer brandId) {
         Brand brand = brandMapper.selectByPrimaryKey(brandId);
         return brand;
+    }
+
+    public List<Brand> selectAll() {
+        List<Brand> brands = brandMapper.selectAll();
+        return brands;
     }
 
     public int insert(Brand record) {

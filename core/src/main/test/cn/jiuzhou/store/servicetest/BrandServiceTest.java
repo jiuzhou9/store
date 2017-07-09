@@ -8,6 +8,8 @@ import org.apache.log4j.Logger;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.List;
+
 
 /**
  * Created by jiuzhou on 2017/7/8.
@@ -34,5 +36,11 @@ public class BrandServiceTest extends SpringTestCase {
     public void selectByPrimaryKeyTest(){
         Brand brand = brandService.selectByPrimaryKey(1);
         System.out.println(JSON.toJSONString(brand));
+    }
+
+    @Test
+    public void selectAllTest(){
+        List<Brand> brands = brandService.selectAll();
+        System.out.println(JSON.toJSONString(brands));
     }
 }

@@ -20,6 +20,12 @@
     from EB_BRAND
     where BRAND_ID = #{brandId,jdbcType=INTEGER}
   </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    SELECT
+    <include refid="Base_Column_List"/>
+    FROM EB_BRAND
+  </select>
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from EB_BRAND
     where BRAND_ID = #{brandId,jdbcType=INTEGER}
