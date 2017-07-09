@@ -82,8 +82,21 @@
 			<th width="10%">操作</th>
 		</thead>
 		<tbody>
-		
-		<tr>
+		<c:forEach items="${brands}" var="brand">
+			<tr>
+				<td>${brand.brandId}</td>
+				<td><img id='imgsImgSrc' src="" height="50" width="50"/></td>
+				<td>${brand.brandName}</td>
+				<td class="nwp">${brand.website}</td>
+				<td class="nwp">${brand.brandDesc}</td>
+				<td>${brand.brandSort}</td>
+				<td>
+					<a href="${path }/shop/item/editbrand.jsp?brandId=3185">编辑</a>
+					<a href="#" onclick="singleDel(3185)">删除</a>
+				</td>
+			</tr>
+		</c:forEach>
+			<%--<tr>
 				<td>3185</td>
                 <td>
 				<img id='imgsImgSrc' src="http://localhost:8081/pic/upload/20131007044713569480.jpg"   height="50" width="50"/></td>
@@ -305,7 +318,7 @@
 					<a href="${path }/shop/item/editbrand.jsp?brandId=1043">编辑</a>
                     <a href="#" onclick="singleDel(1043)">删除</a>
 				</td>
-			</tr>
+			</tr>--%>
 
 		
 			
