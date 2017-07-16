@@ -8,6 +8,10 @@ import org.apache.log4j.Logger;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.io.BufferedInputStream;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.util.List;
 
 
@@ -42,5 +46,23 @@ public class BrandServiceTest extends SpringTestCase {
     public void selectAllTest(){
         List<Brand> brands = brandService.selectAll();
         System.out.println(JSON.toJSONString(brands));
+    }
+
+    @Test
+    public void uploadTest(){
+        String fileName = "a.txt";
+        InputStream inputStream = null;
+        try {
+            inputStream = new FileInputStream("C:/Users/九州/Desktop/编辑1.TXT");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        BufferedInputStream bufferedInputStream = new BufferedInputStream(inputStream);
+        try {
+            String s = brandService.fileUpload(fileName, bufferedInputStream);
+        } catch (Exception e) {
+            e.printStackTrace();
+            logger.info(e.getMessage());
+        }
     }
 }

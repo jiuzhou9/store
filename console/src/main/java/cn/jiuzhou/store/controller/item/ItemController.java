@@ -40,4 +40,17 @@ public class ItemController {
         modelAndView.addObject("brands",brands);
         return modelAndView;
     }
+
+    /**
+     * 跳转品牌添加页
+     * @return
+     */
+    @RequestMapping("addbrand.do")
+    public ModelAndView addbrand(){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("/item/addbrand");
+        return modelAndView;
+    }
+
+
 }

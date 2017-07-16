@@ -7,7 +7,7 @@
 <script type="text/javascript" src="<c:url value='/${system}/res/js/jquery.form.js'/>"></script>
 <script type="text/javascript">
 
-$(function(){
+/*$(function(){
 	
 	$("#form111").submit(function(){
 		
@@ -154,7 +154,7 @@ function submitUpload(){
 	};
 	$("#form111").ajaxSubmit(opt);
 	
-}
+}*/
 </script>
 </head>
 <body id="main">

@@ -67,7 +67,7 @@
     <div class="page_c">
         
         <span class="r inb_a">
-            <a href="${path }/shop/item/addbrand.jsp" title="添加" class="btn80x20">添加</a>
+            <a href="${path }/item/addbrand.do" title="添加" class="btn80x20">添加</a>
         </span>
     </div>
 
