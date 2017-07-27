@@ -30,10 +30,30 @@
 
 
     <dependencies>
+        <!--文件上传hessian-->
+        <dependency>
+            <groupId>cn.jiuzhou.file</groupId>
+            <artifactId>file-api</artifactId>
+            <version>1.0-RELEASE</version>
+        </dependency>
+
+        <!--hessian-->
+        <dependency>
+            <groupId>com.caucho</groupId>
+            <artifactId>hessian</artifactId>
+            <version>${hessian.version}</version>
+            <scope>test</scope>
+        </dependency>
+
         <!--spring 组件 start-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-core</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
             <version>${spring.version}</version>
         </dependency>
         <dependency>
@@ -73,7 +93,6 @@
             <scope>test</scope>
         </dependency>
         <!--spring 组件 end-->
-
 
         <!-- log start -->
         <dependency>

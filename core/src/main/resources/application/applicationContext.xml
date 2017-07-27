@@ -18,8 +18,24 @@
        <!--导入配置文件-->
        <bean id="propertyConfigurer"
              class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-              <property name="location" value="classpath:jdbc/jdbc.properties" />
+              <!--配置单个properties-->
+              <!--<property name="location" value="classpath:jdbc/jdbc.properties" />-->
+              <!--配置多个properties-->
+              <property name="locations">
+                     <list>
+                            <value>classpath:jdbc/jdbc.properties</value>
+                            <value>classpath:hessian-address/hessian-address.properties</value>
+                     </list>
+              </property>
        </bean>
+
+       <!--hessian接口-->
+       <bean id="fileUploadServiceApi" class="org.springframework.remoting.caucho.HessianProxyFactoryBean">
+              <property name="serviceUrl" value="${file-address}/api/fileUploadServiceApi" />
+              <property name="serviceInterface" value="cn.jiuzhou.file.api.FileUploadServiceApi" />
+       </bean>
+
+
 
        <!--数据源-->
        <!--<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">-->

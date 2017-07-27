@@ -40,9 +40,18 @@
         <jstl.version>1.2</jstl.version>
         <standard.version>1.1.2</standard.version>
         <spring-modules-validation.version>0.8</spring-modules-validation.version>
+        <hessian.version>4.0.38</hessian.version>
     </properties>
-
+    <!--maven 私库下载资源-->
+    <repositories>
+        <repository>
+            <id>public</id>
+            <name>虚拟机-192.168.88.40-Nexus</name>
+            <url>http://192.168.88.40:8081/nexus/content/groups/public/</url>
+        </repository>
+    </repositories>
     <dependencies></dependencies>
+
 </project>
 
 
