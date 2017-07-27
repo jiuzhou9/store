@@ -6,7 +6,7 @@
   <display-name>Archetype Created Web Application</display-name>
 
 
-    <!--strutsmenu-->
+    <!--strutsmenu 页面按钮容器初始化-->
     <listener>
         <listener-class>net.sf.navigator.menu.MenuContextListener</listener-class>
     </listener>
@@ -34,7 +34,7 @@
         <url-pattern>*.do</url-pattern>
     </servlet-mapping>
 
-    <!--页面布局装饰器-->
+    <!--页面布局装饰器（页面拦截）-->
     <filter>
         <filter-name>sitemesh</filter-name>
         <filter-class>com.opensymphony.module.sitemesh.filter.PageFilter</filter-class>
